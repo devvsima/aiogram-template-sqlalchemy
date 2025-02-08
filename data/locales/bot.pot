@@ -1,0 +1,67 @@
+# Translations template for bot.
+# Copyright (C) 2025 ORGANIZATION
+# This file is distributed under the same license as the bot project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: bot VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2025-02-01 15:02+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: app/handlers/msg_text.py:11
+msgid "👋, <a href='tg://user?id={}'>{}</a>"
+msgstr ""
+
+#: app/handlers/msg_text.py:15
+msgid "Bot Info:"
+msgstr ""
+
+#: app/handlers/msg_text.py:19
+msgid ""
+"Invited users: <b>{}</b>\n"
+"\n"
+"Link for friends:\n"
+"<code>https://t.me/{}?start={}</code>"
+msgstr ""
+
+#: app/handlers/msg_text.py:25
+msgid "You're the administrator!"
+msgstr ""
+
+#: app/handlers/msg_text.py:29
+msgid "Select the language you want to switch to: 🌐"
+msgstr ""
+
+#: app/handlers/msg_text.py:33
+msgid "Your language has been successfully changed! ✅"
+msgstr ""
+
+#: app/others/commands.py:8
+msgid "start chat"
+msgstr ""
+
+#: app/others/commands.py:9
+msgid "change language"
+msgstr ""
+
+#: app/others/commands.py:10
+msgid "bot description"
+msgstr ""
+
+#: app/others/commands.py:11
+msgid "referal system"
+msgstr ""
+
+#: app/others/commands.py:21
+msgid "admin panel"
+msgstr ""
+

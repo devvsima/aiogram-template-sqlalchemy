@@ -1,0 +1,17 @@
+.idea
+.fleet
+.vscode
+.venv
+.github
+
+
+**/__pycache__
+**/migrations/versions
+
+**.sqlite
+**.sqlite3
+**.json
+**.csv
+**.sql
+**/.env
+**/logs
