@@ -1,16 +1,11 @@
 from pathlib import Path
+
 from environs import Env
 
 DIR = Path(__file__).absolute().parent.parent
 
 env = Env()
 env.read_env()
-
-
-class TelegramBotSettings:
-    TOKEN: str = env.str("TOKEN", default=None)
-    ADMINS: list = env.list("ADMINS", default=None, subcast=int)
-    SKIP_UPDATES: bool = env.bool("SKIP_UPDATES", default=False)
 
 
 class DatabaseSettings:
@@ -41,7 +36,10 @@ class RedisSettings:
         URL = f"redis://{HOST}:{PORT}/{DB}"
 
 
-# ---< Other >---
+BOT_TOKEN: str = env.str("TOKEN", default=None)
+ADMINS: list = env.list("ADMINS", default=None, subcast=int)
+SKIP_UPDATES: bool = env.bool("SKIP_UPDATES", default=False)
+
 TIME_ZONE = "UTC"
 
 I18N_DOMAIN = "bot"
@@ -49,6 +47,5 @@ I18N_DOMAIN = "bot"
 IMAGES_DIR = rf"{DIR}/images"
 LOCALES_DIR = f"{DIR}/data/locales"
 
-tgbot = TelegramBotSettings()
 database = DatabaseSettings()
 redis = RedisSettings()

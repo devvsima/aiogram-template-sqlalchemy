@@ -1,12 +1,10 @@
+from typing import Any, Callable
+
 from aiogram import BaseMiddleware
 from aiogram.types import Message
 
-from data.config import tgbot
+from data.config import ADMINS
 from database.service.users import get_user
-
-from typing import Any, Callable
-
-ADMINS = tgbot.ADMINS
 
 
 class AdminMiddleware(BaseMiddleware):

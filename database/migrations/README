@@ -1,1 +1,11 @@
-Generic single-database configuration.
+alembic revision --autogenerate
+
+
+alembic upgrade head
+or
+alembic upgrade "migraion name"
+
+
+alembic downgrade base
+or
+alembic downgrade "migraion name"

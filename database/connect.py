@@ -5,7 +5,6 @@ from utils.logging import logger
 
 from .models.base import BaseModel
 
-
 if database.URL.startswith("sqlite"):
     logger.info("Database: Sqlite")
 else:

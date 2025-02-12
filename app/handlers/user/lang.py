@@ -2,12 +2,10 @@ from aiogram import F, types
 from aiogram.filters import Command
 from aiogram.filters.state import StateFilter
 
-from app.routers import user_router as router
-
-from database.service.users import change_language
-
 from app.handlers.msg_text import msg_text
 from app.keyboards.inline.lang import lang_ikb
+from app.routers import user_router as router
+from database.service.users import change_language
 
 
 @router.message(Command("language"), StateFilter(None))
