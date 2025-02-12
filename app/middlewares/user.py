@@ -3,20 +3,21 @@ from typing import Any, Callable
 from aiogram import BaseMiddleware
 from aiogram.types import CallbackQuery, Message
 
-from database.service.users import get_or_create_user
+from database.services import User
 
 
 class UsersMiddleware(BaseMiddleware):
-    async def __call__(self, handler: Callable, event: Message | CallbackQuery, data: dict) -> Any:
+    async def __call__(
+        self, handler: Callable, message: Message | CallbackQuery, data: dict
+    ) -> Any:
         session = data["session"]
-
-        user = await get_or_create_user(
+        user, is_create = await User.get_or_create(
             session,
-            user_id=event.from_user.id,
-            username=event.from_user.username,
-            language=event.from_user.language_code,
+            user_id=message.from_user.id,
+            username=message.from_user.username,
+            language=message.from_user.language_code,
         )
         if not user.is_banned:
             data["user"] = user
-            return await handler(event, data)
+            return await handler(message, data)
         return
