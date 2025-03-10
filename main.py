@@ -12,11 +12,11 @@ from utils.logging import logger
 
 async def on_startup() -> None:
     await set_default_commands()
-    logger.info("~ Bot startup")
+    logger.log("BOT", "~ Bot startup")
 
 
 async def on_shutdown() -> None:
-    logger.info("~ Bot shutting down...")
+    logger.log("BOT", "~ Bot shutting down...")
 
 
 async def main():

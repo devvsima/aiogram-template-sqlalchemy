@@ -21,7 +21,7 @@ class StartMiddleware(BaseMiddleware):
 
             if is_create:
                 if inviter := data["command"].args:
-                    inviter = User.get(decode_base62(inviter))
+                    inviter = await User.get(decode_base62(inviter))
                     await User.increment_referral_count(session, inviter)
 
             return await handler(message, data)

@@ -37,12 +37,15 @@ class RedisSettings:
 
 
 BOT_TOKEN: str = env.str("TOKEN", default=None)
-ADMINS: list = env.list("ADMINS", default=None, subcast=int)
 SKIP_UPDATES: bool = env.bool("SKIP_UPDATES", default=False)
+
+ADMINS: list = env.list("ADMINS", default=None, subcast=int)
+MODERATOR_GROUP: int = env.int("MODERATOR_GROUP_ID", default=None)
 
 TIME_ZONE = "UTC"
 
 I18N_DOMAIN = "bot"
+
 
 IMAGES_DIR = rf"{DIR}/images"
 LOCALES_DIR = f"{DIR}/data/locales"
