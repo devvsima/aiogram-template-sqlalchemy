@@ -2,9 +2,9 @@ from aiogram import types
 from aiogram.filters import Command
 from aiogram.filters.state import StateFilter
 
-from app.handlers.msg_text import msg_text
 from app.routers import user_router as router
-from database.models.users import UserModel
+from app.text import message_text as mt
+from database.models.user import UserModel
 from loader import bot
 from utils.base62 import encode_base62
 
@@ -16,7 +16,7 @@ async def _invite_link_command(message: types.Message, user: UserModel) -> None:
     user_code: str = encode_base62(message.from_user.id)
 
     await message.answer(
-        msg_text.INVITE_FRIENDS.format(
+        mt.INVITE_FRIENDS.format(
             user.referral,
             bot_user.username,
             user_code,

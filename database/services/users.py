@@ -1,41 +1,23 @@
 from sqlalchemy.ext.asyncio import AsyncSession
 
+from database.services.base import BaseService
 from utils.logging import logger
 
-from ..models.users import UserModel
+from ..models.user import UserModel
 
 
-class User:
-    @staticmethod
-    async def get(session: AsyncSession, user_id: int) -> UserModel | None:
-        """Возвращает пользователя по его id"""
-        return await session.get(UserModel, user_id)
+class User(BaseService):
+    model = UserModel
 
     @staticmethod
     async def get_or_create(
         session: AsyncSession, user_id: int, username: str = None, language: str = None
     ) -> UserModel:
-        if user := await User.get(session, user_id):
+        if user := await User.get_by_id(session=session, id=user_id):
             return user, False
-        await User.create(session, user_id=user_id, username=username, language=language)
-        user = await User.get(session, user_id)
+        await User.create(session, id=user_id, username=username, language=language)
+        user = await User.get_by_id(session=session, id=user_id)
         return user, True
-
-    @staticmethod
-    async def create(
-        session: AsyncSession, user_id: int, username: str = None, language: str = None
-    ) -> UserModel:
-        """Создает нового пользователя"""
-        logger.log("DATABASE", f"New user: {user_id} (@{username}) {language}")
-        session.add(UserModel(id=user_id, username=username, language=language))
-        await session.commit()
-
-    @staticmethod
-    async def update_username(session: AsyncSession, user: UserModel, username: str = None) -> None:
-        """Обновляет данные пользователя"""
-        user.username = username
-        await session.commit()
-        logger.log("DATABASE", f"{user.id} ({user.username}): обновленно имя на - {username}")
 
     @staticmethod
     async def increment_referral_count(
@@ -45,19 +27,3 @@ class User:
         user.referral += num
         await session.commit()
         logger.log("DATABASE", f"{user.id} (@{user.username}): привел нового пользователя")
-
-    @staticmethod
-    async def update_language(session: AsyncSession, user: UserModel, language: str) -> None:
-        """Изменяет язык пользователя на {language}"""
-        user.language = language
-        await session.commit()
-        logger.log("DATABASE", f"{user.id} (@{user.username}): изменил язык на - {language}")
-
-    @staticmethod
-    async def update_isbanned(session: AsyncSession, user: UserModel, is_banned: bool) -> None:
-        """Меняет статус блокировки пользователя на {is_banned}"""
-        user.is_banned = is_banned
-        await session.commit()
-        logger.log(
-            "DATABASE", f"{user.id} (@{user.username}): статус блокировки изменен на - {is_banned}"
-        )

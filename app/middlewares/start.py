@@ -3,6 +3,7 @@ from typing import Any, Callable
 from aiogram import BaseMiddleware
 from aiogram.types import Message
 
+from database.models.user import UserStatus
 from database.services.users import User
 from utils.base62 import decode_base62
 
@@ -16,13 +17,14 @@ class StartMiddleware(BaseMiddleware):
             username=message.from_user.username,
             language=message.from_user.language_code,
         )
-        if not user.is_banned:
-            data["user"] = user
+        if user.status == UserStatus.Banned:
+            return
 
-            if is_create:
-                if inviter := data["command"].args:
-                    inviter = await User.get(decode_base62(inviter))
-                    await User.increment_referral_count(session, inviter)
+        data["user"] = user
 
-            return await handler(message, data)
-        return
+        if is_create:
+            if inviter := data["command"].args:
+                inviter = await User.get_by_id(decode_base62(inviter))
+                await User.increment_referral_count(session, inviter)
+
+        return await handler(message, data)

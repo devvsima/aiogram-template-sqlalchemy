@@ -1,7 +1,7 @@
 from loader import _
 
 
-class MsgText:
+class MessageText:
     @property
     def WELCOME(self):
         return _("👋, <a href='tg://user?id={}'>{}</a>")
@@ -17,10 +17,6 @@ class MsgText:
         )
 
     @property
-    def ADMIN_WELCOME(self):
-        return _("You're the administrator!")
-
-    @property
     def CHANGE_LANG(self):
         return _("Select the language you want to switch to: 🌐")
 
@@ -28,5 +24,13 @@ class MsgText:
     def DONE_CHANGE_LANG(self):
         return _("Your language has been successfully changed! ✅")
 
+    @property
+    def ADMIN_WELCOME(self):
+        return _("You're the administrator!")
 
-msg_text = MsgText()
+    @property
+    def LOG_SENDING(self):
+        return _("Logs sending...")
+
+
+message_text = MessageText()

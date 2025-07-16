@@ -8,6 +8,7 @@ env = Env()
 env.read_env()
 
 
+# ---< Database >---
 class DatabaseSettings:
     NAME: str = env.str("DB_NAME", default=None)
     HOST: str = env.str("DB_HOST", default="localhost")
@@ -25,6 +26,7 @@ class DatabaseSettings:
     MAX_OVERFLOW = 10
 
 
+# ---< Redis >---
 class RedisSettings:
     HOST: str = env.str("REDIS_HOST", default=None)
     PORT: int = env.int("REDIS_PORT", default=6379)
@@ -36,7 +38,8 @@ class RedisSettings:
         URL = f"redis://{HOST}:{PORT}/{DB}"
 
 
-BOT_TOKEN: str = env.str("TOKEN", default=None)
+# ---< Telegram bot >---
+BOT_TOKEN: str = env.str("TELEGRAM_BOT_TOKEN", default=None)
 SKIP_UPDATES: bool = env.bool("SKIP_UPDATES", default=False)
 
 ADMINS: list = env.list("ADMINS", default=None, subcast=int)
@@ -46,9 +49,11 @@ TIME_ZONE = "UTC"
 
 I18N_DOMAIN = "bot"
 
-
+# ---< Path\Dir >---
 IMAGES_DIR = rf"{DIR}/images"
 LOCALES_DIR = f"{DIR}/data/locales"
+LOG_FILE_PATH: Path = DIR / "logs" / "logs.log"
 
+# ---< Other >---
 database = DatabaseSettings()
 redis = RedisSettings()

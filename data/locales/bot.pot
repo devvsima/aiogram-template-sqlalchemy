@@ -17,15 +17,15 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.9.1\n"
 
-#: app/handlers/msg_text.py:11
+#: app/handlers/message_text as mt.py:11
 msgid "👋, <a href='tg://user?id={}'>{}</a>"
 msgstr ""
 
-#: app/handlers/msg_text.py:15
+#: app/handlers/message_text as mt.py:15
 msgid "Bot Info:"
 msgstr ""
 
-#: app/handlers/msg_text.py:19
+#: app/handlers/message_text as mt.py:19
 msgid ""
 "Invited users: <b>{}</b>\n"
 "\n"
@@ -33,15 +33,15 @@ msgid ""
 "<code>https://t.me/{}?start={}</code>"
 msgstr ""
 
-#: app/handlers/msg_text.py:25
+#: app/handlers/message_text as mt.py:25
 msgid "You're the administrator!"
 msgstr ""
 
-#: app/handlers/msg_text.py:29
+#: app/handlers/message_text as mt.py:29
 msgid "Select the language you want to switch to: 🌐"
 msgstr ""
 
-#: app/handlers/msg_text.py:33
+#: app/handlers/message_text as mt.py:33
 msgid "Your language has been successfully changed! ✅"
 msgstr ""
 
@@ -64,4 +64,3 @@ msgstr ""
 #: app/others/commands.py:21
 msgid "admin panel"
 msgstr ""
-

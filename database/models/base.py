@@ -4,13 +4,22 @@ from typing import Annotated
 from sqlalchemy import DateTime, func
 from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column
 
-created_at = Annotated[datetime, mapped_column(DateTime, default=func.now())]
-updated_at = Annotated[datetime, mapped_column(DateTime, default=func.now(), onupdate=func.now())]
+created_at = Annotated[
+    datetime,
+    mapped_column(DateTime, server_default=func.now(), nullable=True),
+]
+updated_at = Annotated[
+    datetime,
+    mapped_column(DateTime, server_default=func.now(), onupdate=func.now(), nullable=True),
+]
 
 
 class BaseModel(DeclarativeBase):
     created_at: Mapped[created_at]
     updated_at: Mapped[updated_at]
+
+    repr_cols_num = 3
+    repr_cols = tuple()
 
     def __repr__(self):
         cols = []
