@@ -7,61 +7,79 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2025-02-01 15:02+0200\n"
+"POT-Creation-Date: 2025-09-08 12:11+0300\n"
 "PO-Revision-Date: 2024-09-07 14:40+0300\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: en\n"
 "Language-Team: en <LL@li.org>\n"
-"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.9.1\n"
+"Generated-By: Babel 2.17.0\n"
 
-#: app/handlers/message_text as mt.py:11
+#: app/commands.py:8
+msgid "start chat"
+msgstr ""
+
+#: app/commands.py:9
+msgid "change language"
+msgstr ""
+
+#: app/commands.py:10
+msgid "bot description"
+msgstr ""
+
+#: app/commands.py:11
+msgid "referal system"
+msgstr ""
+
+#: app/commands.py:21 app/commands.py:22
+msgid "admin panel"
+msgstr ""
+
+#: app/text.py:7
+#, python-brace-format
 msgid "👋, <a href='tg://user?id={}'>{}</a>"
 msgstr ""
 
-#: app/handlers/message_text as mt.py:15
+#: app/text.py:11
 msgid "Bot Info:"
 msgstr ""
 
-#: app/handlers/message_text as mt.py:19
+#: app/text.py:15
+#, python-brace-format
 msgid ""
 "Invited users: <b>{}</b>\n"
 "\n"
 "Link for friends:\n"
-"<code>https://t.me/{}?start={}</code>"
+"<code>{}</code>"
 msgstr ""
 
-#: app/handlers/message_text as mt.py:25
-msgid "You're the administrator!"
-msgstr ""
-
-#: app/handlers/message_text as mt.py:29
+#: app/text.py:19
 msgid "Select the language you want to switch to: 🌐"
 msgstr ""
 
-#: app/handlers/message_text as mt.py:33
+#: app/text.py:23
 msgid "Your language has been successfully changed! ✅"
 msgstr ""
 
-#: app/others/commands.py:8
-msgid "start chat"
+#: app/text.py:27
+msgid "You're the administrator!"
 msgstr ""
 
-#: app/others/commands.py:9
-msgid "change language"
+#: app/text.py:31
+msgid "Logs sending..."
 msgstr ""
 
-#: app/others/commands.py:10
-msgid "bot description"
+#: app/text.py:35
+msgid "Unknown command. If you are lost, type /start."
 msgstr ""
 
-#: app/others/commands.py:11
-msgid "referal system"
-msgstr ""
+#~ msgid ""
+#~ "Invited users: <b>{}</b>\n"
+#~ "\n"
+#~ "Link for friends:\n"
+#~ "<code>https://t.me/{}?start={}</code>"
+#~ msgstr ""
 
-#: app/others/commands.py:21
-msgid "admin panel"
-msgstr ""

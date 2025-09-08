@@ -12,9 +12,7 @@ class MessageText:
 
     @property
     def INVITE_FRIENDS(self):
-        return _(
-            "Invited users: <b>{}</b>\n\nLink for friends:\n<code>https://t.me/{}?start={}</code>"
-        )
+        return _("Invited users: <b>{}</b>\n\nLink for friends:\n<code>{}</code>")
 
     @property
     def CHANGE_LANG(self):
@@ -31,6 +29,10 @@ class MessageText:
     @property
     def LOG_SENDING(self):
         return _("Logs sending...")
+
+    @property
+    def UNKNOWN_COMMAND(self):
+        return _("Unknown command. If you are lost, type /start.")
 
 
 message_text = MessageText()

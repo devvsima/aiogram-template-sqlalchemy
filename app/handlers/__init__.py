@@ -3,9 +3,10 @@ from aiogram.types import ErrorEvent
 
 from utils.logging import logger
 
-from .admin import router as admin_router
-from .user import router as user_router
-from .user.start import start_router
+from .admin import admin_router
+from .common import common_router
+from .user import user_router
+from .voide import voide_router
 
 
 def setup_handlers(dp: Dispatcher) -> None:
@@ -13,4 +14,10 @@ def setup_handlers(dp: Dispatcher) -> None:
     async def _error(event: ErrorEvent):
         logger.exception(event.exception)
 
-    dp.include_routers(start_router, user_router, admin_router)
+    "В порядке срабатывания"
+    dp.include_routers(
+        common_router,  # 1
+        user_router,  # 2
+        admin_router,  # 3
+        voide_router,  # 4
+    )

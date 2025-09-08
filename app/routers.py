@@ -1,5 +1,7 @@
 from aiogram import Router
 
-user_router = Router()
-start_router = Router()
-admin_router = Router()
+common_router = Router()  # Works with standard commands, such as: start, help, etc.
+user_router = Router()  # Key features for users
+admin_router = Router()  # Admin command, administrator verification
+
+voide_router = Router()  # Works when others don't

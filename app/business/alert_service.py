@@ -1,16 +1,20 @@
-from data.config import MODERATOR_GROUP, NEW_USER_ALET_TO_GROUP
+from app.constans import REFERAL_SOURCES
+from data.config import tgbot
 from database.models.user import UserModel
 from loader import bot
 from utils.logging import logger
 
-"Пример того что здесь должно находится. Взято с другого бота"
+IS_ALERT = tgbot.NEW_USER_ALET_TO_GROUP
+GROUP_ID = tgbot.MODERATOR_GROUP_ID
 
 
-async def new_user_alert_to_group(user: UserModel) -> None:
+async def new_user_alert_to_group(user: UserModel, code: str) -> None:
     """Отправляет уведомление в модераторскую группу о новом пользователе"""
-    if NEW_USER_ALET_TO_GROUP and MODERATOR_GROUP:
+    if IS_ALERT and GROUP_ID:
         try:
             text = "New user!\n<code>{}</code> (@{})".format(user.id, user.username)
-            await bot.send_message(chat_id=MODERATOR_GROUP, text=text)
+            if code:
+                text += "\n\nSource: {}".format(REFERAL_SOURCES[code])
+            await bot.send_message(chat_id=tgbot.MODERATOR_GROUP_ID, text=text)
         except:
             logger.error("Сообщение в модераторскую группу не отправленно")

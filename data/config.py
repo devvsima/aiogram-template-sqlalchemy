@@ -8,7 +8,7 @@ env = Env()
 env.read_env()
 
 
-# ---< Database >---
+# -< Database >-
 class DatabaseSettings:
     NAME: str = env.str("DB_NAME", default=None)
     HOST: str = env.str("DB_HOST", default="localhost")
@@ -18,7 +18,7 @@ class DatabaseSettings:
 
     URL: str = env.str("DB_URL", default=f"sqlite+aiosqlite:///{DIR}/database/db.sqlite3")
 
-    if all([NAME, HOST, PORT, USER, PASS]):
+    if all((NAME, HOST, PORT, USER, PASS)):
         URL = f"postgresql+asyncpg://{USER}:{PASS}@{HOST}:{PORT}/{NAME}"
 
     ECHO = False
@@ -26,7 +26,7 @@ class DatabaseSettings:
     MAX_OVERFLOW = 10
 
 
-# ---< Redis >---
+# -< Redis >-
 class RedisSettings:
     HOST: str = env.str("REDIS_HOST", default=None)
     PORT: int = env.int("REDIS_PORT", default=6379)
@@ -34,26 +34,32 @@ class RedisSettings:
 
     URL: str = env.str("RD_URL", default=None)
 
-    if all([HOST, PORT, DB]):
+    if all((HOST, PORT, DB)):
         URL = f"redis://{HOST}:{PORT}/{DB}"
 
 
-# ---< Telegram bot >---
-BOT_TOKEN: str = env.str("TELEGRAM_BOT_TOKEN", default=None)
-SKIP_UPDATES: bool = env.bool("SKIP_UPDATES", default=False)
+# -< Telegram bot >-
+class TelegramBotSettings:
+    BOT_TOKEN: str = env.str("TELEGRAM_BOT_TOKEN", default=None)
+    SKIP_UPDATES: bool = env.bool("SKIP_UPDATES", default=False)
+    NEW_USER_ALET_TO_GROUP: bool = env.bool("NEW_USER_ALET_TO_GROUP", default=True)
 
-ADMINS: list = env.list("ADMINS", default=None, subcast=int)
-MODERATOR_GROUP: int = env.int("MODERATOR_GROUP_ID", default=None)
+    ADMINS: list = env.list("ADMINS", default=None, subcast=int)
+    MODERATOR_GROUP_ID: int = env.int("MODERATOR_GROUP_ID", default=None)
+    BOT_CHANNEL_URL: str = env.str("BOT_CHANNEL_URL", default=None)
 
-TIME_ZONE = "UTC"
+    TIME_ZONE = "UTC"
 
-I18N_DOMAIN = "bot"
+    I18N_DOMAIN = "bot"
 
-# ---< Path\Dir >---
+
+# -< Path\Dir >-
 IMAGES_DIR = rf"{DIR}/images"
 LOCALES_DIR = f"{DIR}/data/locales"
 LOG_FILE_PATH: Path = DIR / "logs" / "logs.log"
 
-# ---< Other >---
+
+# -< Other >-
 database = DatabaseSettings()
 redis = RedisSettings()
+tgbot = TelegramBotSettings()

@@ -1,5 +1,3 @@
-from .help import router
-from .invite import router
-from .lang import router
+from .command import user_router
 
-__all__ = ["router"]
+__all__ = ["user_router"]

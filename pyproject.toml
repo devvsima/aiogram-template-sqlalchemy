@@ -9,6 +9,7 @@ dependencies = [
     "aiosqlite>=0.21.0",
     "alembic>=1.15.1",
     "asyncpg>=0.30.0",
+    "babel>=2.17.0",
     "environs>=14.1.1",
     "loguru>=0.7.3",
     "redis>=5.2.1",

@@ -9,14 +9,13 @@ from ..models.user import UserModel
 class User(BaseService):
     model = UserModel
 
-    @staticmethod
     async def get_or_create(
-        session: AsyncSession, user_id: int, username: str = None, language: str = None
+        session: AsyncSession, id: int, username: str = None, language: str = None
     ) -> UserModel:
-        if user := await User.get_by_id(session=session, id=user_id):
+        if user := await User.get_by_id(session, id):
             return user, False
-        await User.create(session, id=user_id, username=username, language=language)
-        user = await User.get_by_id(session=session, id=user_id)
+        await User.create(session, id=id, username=username, language=language)
+        user = await User.get_by_id(session, id)
         return user, True
 
     @staticmethod
