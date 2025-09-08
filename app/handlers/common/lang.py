@@ -9,8 +9,8 @@ from database.models import UserModel
 from database.services import User
 
 
-@common_router.message(Command("language"), StateFilter(None))
-@common_router.message(Command("lang"), StateFilter(None))
+@common_router.message(StateFilter(None), Command("language"))
+@common_router.message(StateFilter(None), Command("lang"))
 async def _lang(message: types.Message) -> None:
     """Предлагает клавиатуру с доступными языками"""
     await message.answer(mt.CHANGE_LANG, reply_markup=lang_ikb())

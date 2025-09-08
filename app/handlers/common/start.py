@@ -6,7 +6,7 @@ from app.routers import common_router
 from app.text import message_text as mt
 
 
-@common_router.message(CommandStart(), StateFilter(None))
+@common_router.message(StateFilter(None), CommandStart())
 async def _start_command(message: types.Message) -> None:
     text = mt.WELCOME.format(
         message.from_user.id,

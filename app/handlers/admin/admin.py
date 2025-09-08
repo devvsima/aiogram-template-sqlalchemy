@@ -6,7 +6,7 @@ from app.routers import admin_router
 from app.text import message_text as mt
 
 
-@admin_router.message(Command("admin"), StateFilter(None))
+@admin_router.message(StateFilter(None), Command("admin"))
 async def _admin_command(message: types.Message) -> None:
     """Админ панель"""
     await message.answer(mt.ADMIN_WELCOME)
