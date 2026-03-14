@@ -5,8 +5,7 @@ from aiogram.filters.state import StateFilter
 from app.keyboards.inline.lang import lang_ikb
 from app.routers import common_router
 from app.text import message_text as mt
-from database.models import UserModel
-from database.services import User
+from database.models import User
 
 
 @common_router.message(StateFilter(None), Command("language"))
@@ -17,7 +16,7 @@ async def _lang(message: types.Message) -> None:
 
 
 @common_router.callback_query(F.data.in_(("ru", "uk", "en")))
-async def _lang_change(callback: types.CallbackQuery, user: UserModel, session) -> None:
+async def _lang_change(callback: types.CallbackQuery, user: User, session) -> None:
     """Меняет язык пользователя на выбранный"""
     await User.update_language(session, user=user, language=callback.data)
     await callback.message.edit_text(mt.DONE_CHANGE_LANG)

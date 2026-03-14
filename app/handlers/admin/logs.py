@@ -5,7 +5,7 @@ from aiogram.types import FSInputFile
 
 from app.routers import admin_router
 from app.text import message_text as mt
-from data.config import LOG_FILE_PATH
+from core.config import LOG_FILE_PATH
 
 
 @admin_router.message(StateFilter(None), Command("log"))

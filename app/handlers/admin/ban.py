@@ -6,8 +6,7 @@ from aiogram.filters.state import StateFilter
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.routers import admin_router
-from database.models.user import UserStatus
-from database.services.user import User
+from database.models import User, UserStatus
 
 
 @admin_router.message(StateFilter(None), Command("ban"))

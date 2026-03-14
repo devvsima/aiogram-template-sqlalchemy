@@ -1,0 +1,83 @@
+# Russian translations for PROJECT.
+# Copyright (C) 2024 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2024.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2025-09-08 12:11+0300\n"
+"PO-Revision-Date: 2025-09-08 12:12+0300\n"
+"Last-Translator: \n"
+"Language-Team: ru <LL@li.org>\n"
+"Language: ru\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Generated-By: Babel 2.17.0\n"
+"X-Generator: Poedit 3.5\n"
+
+#: app/commands.py:8
+msgid "start chat"
+msgstr "начать чат"
+
+#: app/commands.py:9
+msgid "change language"
+msgstr "изменить язык"
+
+#: app/commands.py:10
+msgid "bot description"
+msgstr "описание бота"
+
+#: app/commands.py:11
+msgid "referal system"
+msgstr "реферальная система"
+
+#: app/commands.py:21 app/commands.py:22
+msgid "admin panel"
+msgstr "админ панель"
+
+#: app/text.py:7
+#, python-brace-format
+msgid "👋, <a href='tg://user?id={}'>{}</a>"
+msgstr "👋, <a href='tg://user?id={}'>{}</a>"
+
+#: app/text.py:11
+msgid "Bot Info:"
+msgstr "Информация о боте:"
+
+#: app/text.py:15
+#, python-brace-format
+msgid ""
+"Invited users: <b>{}</b>\n"
+"\n"
+"Link for friends:\n"
+"<code>{}</code>"
+msgstr ""
+"Приглашенные пользователи: <b>{}</b>\n"
+"\n"
+"Ссылка для друзей:\n"
+"<code>{}</code>"
+
+#: app/text.py:19
+msgid "Select the language you want to switch to: 🌐"
+msgstr "Выберите язык, на который вы хотите переключиться: 🌐"
+
+#: app/text.py:23
+msgid "Your language has been successfully changed! ✅"
+msgstr "Ваш язык был успешно изменен! ✅"
+
+#: app/text.py:27
+msgid "You're the administrator!"
+msgstr "Вы администратор!"
+
+#: app/text.py:31
+msgid "Logs sending..."
+msgstr "Отправка журналов..."
+
+#: app/text.py:35
+msgid "Unknown command. If you are lost, type /start."
+msgstr "Неизвестная команда. Если вы заблудились, введите /start."

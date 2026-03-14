@@ -1,7 +1,7 @@
 from aiogram.filters import Filter
 from aiogram.types import Message
 
-from data.config import ADMINS
+from core.config import ADMINS
 
 
 class IsCreate(Filter):

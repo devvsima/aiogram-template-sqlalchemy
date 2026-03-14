@@ -1,4 +1,4 @@
-from loader import _
+from core.loader import _
 
 
 class MessageText:

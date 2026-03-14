@@ -1,7 +1,7 @@
 from aiogram.utils.keyboard import InlineKeyboardBuilder
 
 from app.filters.keyboard import LangCallback
-from loader import i18n
+from core.loader import i18n
 
 language_dict = {
     "ru": "🏁 Русский",

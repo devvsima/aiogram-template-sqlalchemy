@@ -7,7 +7,7 @@ from database.models import User
 from database.models.user import UserStatus
 
 
-class UsersMiddleware(BaseMiddleware):
+class VoideMiddleware(BaseMiddleware):
     async def __call__(
         self, handler: Callable, message: Message | CallbackQuery, data: dict
     ) -> Any:

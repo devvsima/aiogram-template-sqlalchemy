@@ -3,8 +3,8 @@ from typing import Any, Callable
 from aiogram import BaseMiddleware
 from aiogram.types import Message
 
-from data.config import tgbot
-from database.services.user import User
+from core.config import tgbot
+from database.models.user import User
 
 ADMINS_ID = tgbot.ADMINS
 

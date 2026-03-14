@@ -1,2 +1,2 @@
-from .referal import ReferalModel
-from .user import UserModel
+from .referal import Referal
+from .user import User, UserStatus

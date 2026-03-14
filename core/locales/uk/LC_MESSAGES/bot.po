@@ -1,0 +1,82 @@
+# English translations for PROJECT.
+# Copyright (C) 2024 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2024.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2025-09-08 12:11+0300\n"
+"PO-Revision-Date: 2025-09-08 12:11+0300\n"
+"Last-Translator: \n"
+"Language-Team: uk <LL@li.org>\n"
+"Language: uk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n>=2 && n<=4 ? 1 : 2);\n"
+"Generated-By: Babel 2.17.0\n"
+"X-Generator: Poedit 3.5\n"
+
+#: app/commands.py:8
+msgid "start chat"
+msgstr "почати чат"
+
+#: app/commands.py:9
+msgid "change language"
+msgstr "змінити мову"
+
+#: app/commands.py:10
+msgid "bot description"
+msgstr "опис бота"
+
+#: app/commands.py:11
+msgid "referal system"
+msgstr "реферальна система"
+
+#: app/commands.py:21 app/commands.py:22
+msgid "admin panel"
+msgstr "адмін панель"
+
+#: app/text.py:7
+#, python-brace-format
+msgid "👋, <a href='tg://user?id={}'>{}</a>"
+msgstr "👋, <a href='tg://user?id={}'>{}</a>"
+
+#: app/text.py:11
+msgid "Bot Info:"
+msgstr "Інформація про бота:"
+
+#: app/text.py:15
+#, python-brace-format
+msgid ""
+"Invited users: <b>{}</b>\n"
+"\n"
+"Link for friends:\n"
+"<code>{}</code>"
+msgstr ""
+"Запрошені користувачі: <b>{}</b>\n"
+"\n"
+"Посилання для друзів:\n"
+"<code>{}</code>"
+
+#: app/text.py:19
+msgid "Select the language you want to switch to: 🌐"
+msgstr "Виберіть мову, на яку ви хочете переключитися: 🌐"
+
+#: app/text.py:23
+msgid "Your language has been successfully changed! ✅"
+msgstr "Вашу мову успішно змінено! ✅"
+
+#: app/text.py:27
+msgid "You're the administrator!"
+msgstr "Ви адміністратор!"
+
+#: app/text.py:31
+msgid "Logs sending..."
+msgstr "Відправлення журналів..."
+
+#: app/text.py:35
+msgid "Unknown command. If you are lost, type /start."
+msgstr "Невідома команда. Якщо ви загубилися, введіть /start."
